@@ -1,0 +1,33 @@
+# This file describes a Fastly Compute@Edge package. To learn more visit:
+# https://developer.fastly.com/reference/fastly-toml/
+
+authors = ["pablo+workshop@fastly.com"]
+description = "A basic starter kit that demonstrates routing, simple synthetic responses and overriding caching rules."
+language = "javascript"
+manifest_version = 2
+name = "Workshop Marzo"
+service_id = "2ITU1IcEUgpjCcGBOqkU0p"
+
+[local_server]
+
+  [local_server.backends]
+
+    [local_server.backends.origin1]
+      url = "http://origin1.workshop.rest"
+
+    [local_server.backends.origin2]
+      url = "http://origin2.workshop.rest"
+
+[setup]
+
+  [setup.backends]
+
+    [setup.backends.origin1]
+      address = "origin1.workshop.rest"
+      description = "Origin1"
+      port = 80
+
+    [setup.backends.origin2]
+      address = "origin2.workshop.rest"
+      description = "Origin2"
+      port = 80
